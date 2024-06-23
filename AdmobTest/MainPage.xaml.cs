@@ -58,26 +58,18 @@ namespace AdmobTest
         {
             /* 전면 광고 표시 */
 
-            // 이미 로드되어있는 확인 - System.Exception: 'MTAdmob not initialised. You need to initialise it using CrossMauiMTAdmob.Current.Init in your platform projects!'
+            // 이미 로드되어있는 확인
             bool isInterstitialLoaded = CrossMauiMTAdmob.Current.IsInterstitialLoaded();
 
             if (!isInterstitialLoaded)
             {
                 if (DeviceInfo.Platform.Equals(DevicePlatform.Android))
                 {
-#if DEBUG
                     CrossMauiMTAdmob.Current.LoadInterstitial("ca-app-pub-3940256099942544/1033173712");
-#else
-                CrossMauiMTAdmob.Current.LoadInterstitial("ca-app-pub-3940256099942544/1033173712");
-#endif
                 }
                 else
                 {
-#if DEBUG
                     CrossMauiMTAdmob.Current.LoadInterstitial("ca-app-pub-3940256099942544/4411468910");
-#else
-                CrossMauiMTAdmob.Current.LoadInterstitial("ca-app-pub-3940256099942544/4411468910");
-#endif
                 }
             }
         }
@@ -93,19 +85,11 @@ namespace AdmobTest
             {
                 if (DeviceInfo.Platform.Equals(DevicePlatform.Android))
                 {
-#if DEBUG
                     CrossMauiMTAdmob.Current.LoadRewarded("ca-app-pub-3940256099942544/5224354917");
-#else
-                CrossMauiMTAdmob.Current.LoadRewarded("ca-app-pub-3940256099942544/5224354917");
-#endif
                 }
                 else
                 {
-#if DEBUG
                     CrossMauiMTAdmob.Current.LoadRewarded("ca-app-pub-3940256099942544/1712485313");
-#else
-                CrossMauiMTAdmob.Current.LoadRewarded("cca-app-pub-3940256099942544/1712485313");
-#endif
                 }
             }
         }

@@ -13,12 +13,12 @@ namespace AdmobTest
         {
             base.OnCreate(savedInstanceState);
 
+            // 추가
             string appId = "ca-app-pub-2643538289217660~5183062697";
-
-            //If you don't have a license code, you can use the following line instead:
             CrossMauiMTAdmob.Current.Init(this, appId);
         }
 
+        // 추가
         protected override void OnResume()
         {
             base.OnResume();
